@@ -6,7 +6,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.top-bg {
+.yellow-bg {
       background-color: #f5ffbc; /* สีฟ้าอ่อน */
       padding: 25px;
       
@@ -44,6 +44,9 @@
   font-style: normal;
   font-size: 2.5rem; 
    color: #6f42c1;  
+     filter: brightness(1.2) drop-shadow(0 0 15px rgb(138, 12, 211));
+     
+     
 }
 
 .bottom-box {
@@ -105,3 +108,64 @@
     .next {
       right: 10px;
     }
+
+.image-3d {
+  width: 300px;
+  height: auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-3d:hover {
+  transform: perspective(800px) translateY(-10px) scale(1.1);
+  box-shadow: 0 0 25px rgba(252, 234, 80, 0.5), 
+              0 0 50px rgba(157, 55, 252, 0.3),
+              0 20px 40px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.2) drop-shadow(0 0 15px rgb(138, 12, 211));
+}
+
+
+.magic-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.5s ease, text-shadow 0.5s ease;
+  position: relative;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปวาง */
+.magic-text:hover {
+  transform: scale(1.2) rotate(-2deg);
+  text-shadow: 
+    0 0 10px #f5ffbc,
+    0 0 20px #f5ffbc,
+    0 0 40px #f5ffbc,
+    0 0 80px #f5ffbc;
+  animation: magicPulse 2s infinite ease-in-out;
+}
+
+/* แอนิเมชันพลังเวทย์ */
+@keyframes magicPulse {
+  0% {
+    text-shadow: 
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc;
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc,
+      0 0 10px #f5ffbc;
+  }
+}
