@@ -169,3 +169,112 @@
       0 0 10px #f5ffbc;
   }
 }
+
+
+.magic-box {
+    background: linear-gradient(145deg, #fff3b0, #ffe066);
+    border: 2px solid #f9ca24;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 223, 77, 0.6);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.magic-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 223, 77, 0.9);
+}
+
+.magic-box::before {
+    content: "✨ คลิกเพื่อเปิดจดหมายรีวิวจากหนังสือเล่มนี้✨";
+    display: block;
+    color: #946c00;
+    font-weight: bold;
+    margin-bottom: 10px;
+  
+}
+
+.review-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    color: #5a4200;
+}
+
+.magic-box.active .review-text {
+    display: block;
+    opacity: 1;
+}
+
+.sparkle {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 20px;
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 223, 77, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.video-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 223, 77, 1);
+}
+
+.video-container {
+  position: relative;
+  display: flex;             /* ใช้ flex เพื่อจัดกึ่งกลาง */
+  justify-content: center;   /* จัดแนวนอนกึ่งกลาง */
+  align-items: center;       /* จัดแนวตั้งกึ่งกลาง */
+  margin: 50px auto;         /* เว้นด้านบน-ล่าง และกึ่งกลางแนวนอน */
+  max-width: 90%;            /* ขนาดไม่เกิน 90% ของหน้าจอ */
+  box-shadow: 0 0 30px rgba(255, 223, 77, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.video-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(255, 223, 77, 1);
+}
+
+.video-container iframe {
+  width: 100%;      /* ขยายเต็ม container */
+  height: 500px;    /* ปรับสูงตามต้องการ */
+  border: none;
+  border-radius: 15px;
+}
+
+.video-container::before {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 223, 77, 0.8);
+  color: #850094;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
